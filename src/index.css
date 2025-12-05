@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial,sans-serif;
+  box-sizing: border-box;
+
+  --universal-padding: 1.5rem;
+}
+
+h1 {
+  font-size: 1.6em;
+  font-weight: 300;
+}
+p {
+  font-size: 0.8em;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+.grid-alignment-container {
+  --border-size: 0.5px;
+  --border-color: #545454;
+
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 80px 1fr;
+  height: 100vh;
+}
+
+.user-nav-section {
+  display: flex;
+  align-items: center;
+  padding: var(--universal-padding);
+
+  border-right: var(--border-color) var(--border-size) solid;
+  border-bottom: var(--border-color) var(--border-size) solid;;
+}
+.top-nav-section {
+  border-bottom: var(--border-color) var(--border-size) solid;;
+  display: flex;
+  align-items: center;
+}
+.left-nav-section {
+  padding: var(--universal-padding);
+  border-right: var(--border-color) var(--border-size) solid;;
+}
+.main-nav-section {
+  margin: var(--universal-padding);
+}
+
+.search-section {
+  width: 100%;
+  min-width: 16rem;
+  max-width: 25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: var(--universal-padding);
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  background-color: #4C4C4C;
+  gap: 0.6rem;
+}
+.search-section input {
+  flex-grow: 1;
+  border: none;
+  background-color: inherit;
+  color: white;
+}
+.search-section input:focus {
+  outline: none;
+}
+.search-section input::placeholder {
+  color: white;
+}
+
+#search_icon {
+  aspect-ratio: 1;
+  width: 18px;
+  stroke: white;
+  fill: white;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  /* Remove default appearance */
+  -webkit-appearance: none;
+  /* background-color: white; */
+
+  background-image: url("./resources/x-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+  /* Define size of the button */
+  width: 10px; /* Adjust as needed */
+  aspect-ratio: 1;
+  
+  /* Optionally, add a cursor style */
+  cursor: pointer;
+}
