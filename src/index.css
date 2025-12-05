@@ -5,14 +5,24 @@
   box-sizing: border-box;
 
   --universal-padding: 1.5rem;
+
+  --fw-extralight: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-regular-medium: 450;
+  --fw-medium: 500;
+  --fw-medium-semibold: 550;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
 }
 
 h1 {
   font-size: 1.6em;
-  font-weight: 300;
+  font-weight: var(--fw-light);
 }
 h5 {
-  font-weight: 400;
+  font-weight: var(--fw-regular);
 }
 p,
 li {
@@ -38,10 +48,15 @@ body {
   display: flex;
   align-items: center;
   padding: var(--universal-padding);
-
+  gap: 0.8rem;
+  
   border-right: var(--border-color) var(--border-size) solid;
   border-bottom: var(--border-color) var(--border-size) solid;;
 }
+.user-nav-section img {
+  width: 20px;
+}
+
 .top-nav-section {
   border-bottom: var(--border-color) var(--border-size) solid;;
   display: flex;
@@ -53,24 +68,28 @@ body {
   gap: 1rem;
   padding: var(--universal-padding);
   padding-right: 1rem;
-  border-right: var(--border-color) var(--border-size) solid;;
+  border-right: var(--border-color) var(--border-size) solid;
+  overflow: scroll;
+  scrollbar-width: thin;
 }
 
 .navigation-group {
   display: flex;
   flex-direction: column;
   /* background-color: red; */
-  gap: 0.5rem;
-  margin-bottom: 2rem;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .navigation-elements {
+  position: relative;
   list-style: none;
   /* margin-left: 0.5rem; */
   /* background-color: blue; */
   border-radius: 0.5rem;
   padding: 1rem 0.8rem;
   gap: 0.25rem;
+  /* gap: 0.8rem; */
   cursor: pointer;
 }
 
@@ -120,7 +139,6 @@ body {
 input[type="search"]::-webkit-search-cancel-button {
   /* Remove default appearance */
   -webkit-appearance: none;
-  /* background-color: white; */
 
   background-image: url("./resources/x-icon.svg");
   background-size: contain;
